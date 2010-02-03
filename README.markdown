@@ -128,11 +128,11 @@ __Resources__ form the vocabulary
 
 __Merchants__ are businesses which operate [stores][store]. They earn income by selling their [products][product] to [customers][customer].
 
-#### Attributes
+#### Fields
 
 <table>
   <tr>
-    <th>attribute</th>
+    <th>field</th>
     <th>description</th>
     <th>format</th>
     <th>example</th>
@@ -163,11 +163,11 @@ __Merchants__ are businesses which operate [stores][store]. They earn income by 
 
 A __Customer__ is an individual person who purchases from a [merchant's][merchant] [stores][store]. The same [user][user] may represent many customers, each with a different presence at a different merchant.
 
-#### Attributes
+#### Fields
 
 <table>
   <tr>
-    <th>attribute</th>
+    <th>field</th>
     <th>description</th>
     <th>format</th>
     <th>example</th>
@@ -216,11 +216,11 @@ A __Customer__ is an individual person who purchases from a [merchant's][merchan
 
 __Products__ are the offerings of a [merchant][merchant] to their [customers][customer]. Complex products may require customers to make some choices about their contents, in which case they will have one or more [slots][slot].
 
-#### Attributes
+#### Fields
 
 <table>
   <tr>
-    <th>attribute</th>
+    <th>field</th>
     <th>description</th>
     <th>format</th>
     <th>example</th>
@@ -275,11 +275,11 @@ These resources aren't true domain resources in orderTopia, but they're nonethel
 
 __Errors__ are simply vehicles for delivering information about errors.
 
-#### Attributes
+#### Fields
 
 <table>
   <tr>
-    <th>attribute</th>
+    <th>field</th>
     <th>description</th>
     <th>format</th>
     <th>example</th>
