@@ -220,11 +220,10 @@ If you receive a HTTP 200 header, your request was successful and tastyTopia was
       "params": {"id": "100"},
       "results": [
         {
-          "url": "elevationburger",
-          "description": "Need Description",
-          "user_id": 94,
+          "url": "http://ordertopia.com/merchants/tastytaters",
+          "description": "Tasty Taters sells a variety of scrumptiously starchy tubers!",
           "id": 52,
-          "title": "Elevation Burger"
+          "title": "Tasty Taters"
         }
       ]
     }
@@ -380,8 +379,6 @@ __Products__ are the offerings of a [merchant][merchant] to their [customers][cu
 ### <a name="slot"></a>Slots
 
 __Slots__ represent decisions that can be made about a [product][product], like what kind of toppings to get on a sundae. A slot is filled with other products (which themselves can also have slots!). Which products may go in a slot depend on the [categories][category] specified by that slot. The number of products matching that specification that may go into a slot is determined by the slot's minimum and maximum size.
-
-
 
 ### <a name="store"></a>Stores
 
