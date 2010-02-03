@@ -4,7 +4,7 @@
 
 The tastyTopia represents a live, real-time view of the rich dataset that orderTopia holds. This document provides information to developers and other interested parties about our domain model and how to integrate with orderTopia.
 
-## Request/responses
+## Making API requests
 
 tastyTopia provides a [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer)-ful resource-oriented API that returns responses in the [JSON](http://en.wikipedia.org/wiki/JSON) format. In its simplest incarnation, you describe the resource or resources you're looking for, and we respond with the results.
 
