@@ -520,7 +520,7 @@ The following filters with these values are supported:
 
 When you apply some filters, the `count` field in your response may be different from the number of items in the `results` collection. This is done so that you know how many additional results are available that matched your base request, which is helpful when paging through long requests. Filters with this property are identified above with a "no" entry in the "filtered count?" column, and are called __non-reducing filters__.
 
-In such cases, the `count` field will be equal to the number of results that would have been returned had you not applied any __non-reducing filters__.
+In such cases, the `count` field will be equal to the number of results that would have been returned had you not applied any non-reducing filters.
 
 [category]: #category
 [customer]: #customer
