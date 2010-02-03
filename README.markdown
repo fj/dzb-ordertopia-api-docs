@@ -331,7 +331,7 @@ A __Customer__ is an individual person who purchases from a [merchant's][merchan
 
 ### <a name="store"></a>Products
 
-![products](http://yuml.me/7dac0890)
+![products](http://yuml.me/752dd2c2)
 
 __Products__ are the offerings of a [merchant][merchant] to their [customers][customer]. Complex products may require customers to make some choices about their contents, in which case they will have one or more [slots][slot].
 
@@ -378,7 +378,38 @@ __Products__ are the offerings of a [merchant][merchant] to their [customers][cu
 
 ### <a name="slot"></a>Slots
 
+![](http://yuml.me/2b4f33bc)
+
 __Slots__ represent decisions that can be made about a [product][product], like what kind of toppings to get on a sundae. A slot is filled with other products (which themselves can also have slots!). Which products may go in a slot depend on the [categories][category] specified by that slot. The number of products matching that specification that may go into a slot is determined by the slot's minimum and maximum size.
+
+#### Fields
+
+<table>
+  <tr>
+    <th>field</th>
+    <th>description</th>
+    <th>format</th>
+    <th>example</th>
+  </tr>
+  <tr>
+    <td>min</td>
+    <td>Minimum number of items that may go in this slot.</td>
+    <td>number</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>max</td>
+    <td>Maximum number of items that may go in this slot.</td>
+    <td>number</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>categories</td>
+    <td>Product categories which may fill this slot.</td>
+    <td>array of identifiers</td>
+    <td>[83, 86, 199]</td>
+  </tr>
+</table>
 
 ### <a name="store"></a>Stores
 
