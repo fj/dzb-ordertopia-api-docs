@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The tastyTopia represents a live, real-time view of the rich dataset that orderTopia holds. This document provides information to developers and other interested parties about our domain model and how to integrate with orderTopia.
+The tastyTopia API represents a live, real-time view of the rich dataset that orderTopia holds. This document provides information to developers and other interested parties about our domain model and how to integrate with orderTopia.
 
 ## Making API requests
 
