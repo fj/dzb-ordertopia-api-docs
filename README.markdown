@@ -53,7 +53,7 @@ __Merchants__ are businesses which operate [stores][store]. They earn income by 
 
 ### <a name="customer"></a>Customers
 
-![customers](http://yuml.me/diagram/scruffy/class/%5BCustomer%7Bbg%3Aorange%7D%5D%2C%20%5BUser%5D++1-%3E*%5BCustomer%5D%2C%20%5BMerchant%5D++1-%3E*%5BCustomer%5D)
+![customers](http://yuml.me/80faa1a)
 
 A __Customer__ is an individual person who purchases from a [merchant's][merchant] [stores][store]. The same [user][user] may represent many customers, each with a different presence at a different merchant.
 
@@ -92,6 +92,57 @@ A __Customer__ is an individual person who purchases from a [merchant's][merchan
   </tr>
 </table>
 
+### <a name="store"></a>Products
+
+![customers](http://yuml.me/3298b9e5)
+
+__Products__ are the offerings of a [merchant][merchant] to their [customers][customer]. Complex products may require customers to make some choices about their contents, in which case they will have one or more [slots][slot].
+
+#### Properties
+
+<table>
+  <tr>
+    <th>property</th>
+    <th>description</th>
+    <th>format</th>
+    <th>example</th>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>The product's unique identifier.</td>
+    <td>identifier</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>Short name for the product.</td>
+    <td>string</td>
+    <td>Tater Volcano</td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>Description of the product.</td>
+    <td>string</td>
+    <td>A scrumptious but geologically unstable starchy treat, smothered with your choice of gravy or cheese.</td>
+  </tr>
+  <tr>
+    <td>categories</td>
+    <td>Categories that this product belongs to.</td>
+    <td>array of identifiers</td>
+    <td>[2, 8, 15]</td>
+  </tr>
+  <tr>
+    <td>slots</td>
+    <td>Slots present on this item.</td>
+    <td>array of slots</td>
+    <td><em>(see <a href="#slot">slot</a> section)</em></td>
+  </tr>
+</table>
+
+### <a name="slot"></a>Slots
+
+__Slots__ represent decisions that can be made about a product, like what kind of toppings to get on a sundae.
+
 ### <a name="store"></a>Stores
 
 __Stores__ are a [merchant's][merchant] physical or online presences, through which they sell [products][product]. Presently, each merchant has only one store.
@@ -101,5 +152,6 @@ __Stores__ are a [merchant's][merchant] physical or online presences, through wh
 [customer]: #customer
 [merchant]: #merchant
 [product]: #product
+[slot]: #slot
 [store]: #store
 [user]: #user
