@@ -27,7 +27,8 @@ __Merchants__ are businesses which operate __Stores__.
 [User]++1->*[Customer]
 [Merchant]++1->*[Customer]
 -->
-![customers](http://yuml.me/diagram/scruffy/class/[Customer{bg:orange}], [User]++1->*[Customer])
+
+![customers](http://yuml.me/diagram/scruffy/class/%5BCustomer%7Bbg%3Aorange%7D%5D%2C%20%5BUser%5D++1-%3E*%5BCustomer%5D%2C%20%5BMerchant%5D++1-%3E*%5BCustomer%5D)
 
 A __Customer__ is an individual person who purchases from a [Merchant's][merchant] stores. The same [User][user] may represent many Customers.
 
