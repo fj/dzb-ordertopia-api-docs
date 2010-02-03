@@ -372,7 +372,7 @@ A __Customer__ is an individual person who purchases from a [merchant's][merchan
 
 ### <a name="store"></a>Products
 
-![products](http://yuml.me/752dd2c2)
+![products](http://yuml.me/2fd2023f)
 
 __Products__ are the offerings of a [merchant][merchant] to their [customers][customer]. Complex products may require customers to make some choices about their contents, in which case they will have one or more [slots][slot].
 
