@@ -184,7 +184,7 @@ These fields have the following meaning.
     <td>Type of results you will get; will be one of {"primitive", [resource], "error"}, where [resource] is the name of <a href="#resource">any tastyTopia resource.</a></td>
     <td>string</td>
     <td>"resource": "customers"</td>
-  </tr>* `http://api.ordertopia.com:8080/merchants/5.json`: __Correct__. Retrieves `merchant` resource with `id` 5 in the `json` format.
+  </tr>
   <tr>
     <td>count</td>
     <td>Number of results returned.</td>
