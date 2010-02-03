@@ -8,13 +8,89 @@ The tastyTopia represents a live, real-time view of the rich dataset that orderT
 
 tastyTopia provides a [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer)-ful resource-oriented API that returns responses in the [JSON](http://en.wikipedia.org/wiki/JSON) format. In its simplest incarnation, you describe the resource or resources you're looking for, and we respond with the results.
 
-### Address
+### <a name="auri"></a>Address
 
-The API is available at `http://api.ordertopia.com:8080`. You can check the status of the API by making a `GET` request for this page; if successful, it is currently operational. You can make requests to and will receive responses from this location.
+The API is available at `http://api.ordertopia.com:8080`, also called the __API URI__, or __AURI__. You can check the status of the API by making a `GET` request for this page; if successful, it is currently operational. You can make requests to and will receive responses from this location.
 
 ### Authentication
 
 At present, the API is public access but in beta. No authentication is required, although we will rate-limit excessive usage. Use it judiciously.
+
+### Request format
+
+All requests must be prefixed by the [AURI](#auri). After that, the general format of a request is:
+
+    /<resource>/[<action>|<id>].<format>[?[<filter>=<value>]&...[<filter>=<value>]]
+
+Specifically, a request consists of:
+
+* a __resource__, followed by
+* exactly one of an __action__ or a __resource identifier__;
+* concatenated by `.` to a __format__;
+* followed by zero or more __filter-value pairs__,
+    * the first such pair starting with `?` and subsequent ones starting with `&`,
+    * and each such pair consisting of a __filter__ concatenated by `=` with its corresponding __value__.
+
+<table>
+  <tr>
+    <th>field</th>
+    <th>description</th>
+    <th>format</th>
+    <th>example</th>
+  </tr>
+  <tr>
+    <td>resource</td>
+    <td>One of the <a href="#resource">tastyTopia resources</a>.</td>
+    <td>string</td>
+    <td>"customers"</td>
+  </tr>
+  <tr>
+    <td>action</td>
+    <td>Action to perform. Must be one of the <a href="#supported-actions">supported actions</a>.</td>
+    <td>string</td>
+    <td>"list"</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>An identifier for the resource specified.</td>
+    <td>number</td>
+    <td>500</td>
+  </tr>
+  <tr>
+    <td>format</td>
+    <td>Format to respond in. Must be one of the <a href="#supported-formats">supported formats</a>.</td>
+    <td>string</td>
+    <td>"json"</td>
+  </tr>
+  <tr>
+    <td>filter</td>
+    <td>Format to respond in. Must be one of the <a href="#supported-formats">supported formats</a>.</td>
+    <td>string</td>
+    <td>500</td>
+  </tr>
+</table>
+
+A request is said to be __conforming__ if it meets the above specification. Nonconforming requests might still be accepted, but we don't make any promises. A request is said to be __valid__ if it has acceptable values, regardless of syntax. A request is called __correct__ if it's both valid and conforming. Note that a correct request might still result in a failure [response](#response) -- for example, if you ask for a resource that doesn't exist.
+
+Here are some examples of different requests:
+
+* `http://ordertopia.com/foo/5.json`: __Invalid__; requests must start with the AURI.
+* `http://api.ordertopia.com:8080/foo/5.json`: __Invalid__; `foo` is not an orderTopia resource.
+* `http://api.ordertopia.com:8080/merchants/json.5`: __Non-conforming__; `format` comes before `id`.
+* `http://api.ordertopia.com:8080/merchants/5.json`: __Correct__. Retrieves `merchant` resource with `id` 5 in the `json` format.
+* `http://api.ordertopia.com:8080/merchants/list.json?limit=10`: __Correct__. Lists the first 10 `merchant` resources.
+
+#### <a name="supported-actions"></a>Supported actions
+
+The following actions are supported:
+
+* "list": List all matching resources.
+
+#### <a name="supported-formats"></a>Supported formats
+
+The following formats are supported:
+
+* "json": Standards-compliant [JavaScript Object Notation](http://json.org).
 
 ### HTTP status codes
 
@@ -102,7 +178,7 @@ These fields have the following meaning.
     <td>Type of results you will get; will be one of {"primitive", [resource], "error"}, where [resource] is the name of <a href="#resource">any tastyTopia resource.</a></td>
     <td>string</td>
     <td>"resource": "customers"</td>
-  </tr>
+  </tr>* `http://api.ordertopia.com:8080/merchants/5.json`: __Correct__. Retrieves `merchant` resource with `id` 5 in the `json` format.
   <tr>
     <td>count</td>
     <td>Number of results returned.</td>
@@ -119,7 +195,33 @@ These fields have the following meaning.
 
 #### <a name="success-responses"></a>Successful responses
 
-If you receive a HTTP 200 header, your request was successful and tastyTopia was able to give you what you asked for. Your response will contain a resource array populated with the results.
+If you receive a HTTP 200 header, your request was successful and tastyTopia was able to give you what you asked for. Your response will contain a resource array populated with the results. Here is an example of a successful request and response:
+
+    http://api.ordertopia.com:8080/merchants/100.json
+
+    HTTP/1.1 200 OK
+    Date: Wed, 03 Feb 2010 19:01:14 GMT
+    Server: Apache/2.2.3 (CentOS)
+    Pragma: no-cache
+    Cache-Control: no-cache
+    Content-Length: 191
+    Connection: close
+    Content-Type: application/json; charset=utf-8
+
+    {
+      "count": 1,
+      "resource": "merchants",
+      "params": {"id": "100"},
+      "results": [
+        {
+          "url": "elevationburger",
+          "description": "Need Description",
+          "user_id": 94,
+          "id": 52,
+          "title": "Elevation Burger"
+        }
+      ]
+    }
 
 #### Failed responses
 
@@ -132,7 +234,7 @@ If your request failed, the response will contain one or more [errors][error] wh
 
 ## <a name="resource"></a>Resources
 
-__Resources__ form the vocabulary
+__Resources__ form the vocabulary of things you can work with in tastyTopia.
 
 ### <a name="merchant"></a>Merchants
 
