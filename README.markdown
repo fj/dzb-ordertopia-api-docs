@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The tastyTopia represents a live, real-time view of the rich dataset that orderTopia holds. This document provides information to developers and other interested parties about our domain model and how you can integrate with orderTopia.
+The tastyTopia represents a live, real-time view of the rich dataset that orderTopia holds. This document provides information to developers and other interested parties about our domain model and how to integrate with orderTopia.
 
 ## Request/responses
 
@@ -10,7 +10,7 @@ tastyTopia provides a [REST](http://en.wikipedia.org/wiki/Representational_State
 
 ### Address
 
-The API is available at `http://api.ordertopia.com:8080`. You can check the status of the API by making a request for this page; if successful, it is currently operational. You can make requests to and will receive responses from this location.
+The API is available at `http://api.ordertopia.com:8080`. You can check the status of the API by making a `GET` request for this page; if successful, it is currently operational. You can make requests to and will receive responses from this location.
 
 ### Authentication
 
@@ -18,7 +18,7 @@ At present, the API is public access but in beta. No authentication is required,
 
 ### HTTP status codes
 
-Part of the headers you receive back in any tastyTopia response will be an HTTP status code. There are several possibilities for this value:
+Part of the headers you receive back in any tastyTopia response will be a HTTP status code. There are several possibilities for this value:
 
 <table>
   <tr>
@@ -87,7 +87,7 @@ These fields have the following meaning.
   </tr>
   <tr>
     <td>resource</td>
-    <td>Type of results you will get; will be one of {"primitive", [entity], "error"}, where [entity] is the name of <a href="#entities">any tastyTopia entity.</a></td>
+    <td>Type of results you will get; will be one of {"primitive", [resource], "error"}, where [resource] is the name of <a href="#resource">any tastyTopia resource.</a></td>
     <td>string</td>
     <td>"resource": "customers"</td>
   </tr>
@@ -118,7 +118,9 @@ If you receive any header other than HTTP 200, your request was not necessarily 
 
 If your request failed, the response will contain one or more [errors][error] which you may consult for additional information.
 
-## <a name="entities"></a>Entities
+## <a name="resource"></a>Resources
+
+__Resources__ form the vocabulary
 
 ### <a name="merchant"></a>Merchants
 
@@ -265,13 +267,13 @@ __Slots__ represent decisions that can be made about a [product][product], like 
 
 __Stores__ are a [merchant's][merchant] physical or online presences, through which they sell [products][product]. Presently, each merchant has only one store.
 
-## Special Entities
+## Special Resources
 
-These entities aren't true domain entities in orderTopia.
+These resources aren't true domain resources in orderTopia, but they're nonetheless important.
 
 ### <a name="error"></a>Errors
 
-__Errors__ are simply vehicles for delivering information about errors. No other entity has any relationship with errors.
+__Errors__ are simply vehicles for delivering information about errors.
 
 #### Attributes
 
