@@ -22,11 +22,11 @@ The API is available at `http://api.ordertopia.com:8080`.
 
 __Merchants__ are businesses which operate [stores][store]. They earn income by selling their [products][product] to [customers][customer].
 
-#### Properties
+#### Attributes
 
 <table>
   <tr>
-    <th>property</th>
+    <th>attribute</th>
     <th>description</th>
     <th>format</th>
     <th>example</th>
@@ -57,11 +57,11 @@ __Merchants__ are businesses which operate [stores][store]. They earn income by 
 
 A __Customer__ is an individual person who purchases from a [merchant's][merchant] [stores][store]. The same [user][user] may represent many customers, each with a different presence at a different merchant.
 
-#### Properties
+#### Attributes
 
 <table>
   <tr>
-    <th>property</th>
+    <th>attribute</th>
     <th>description</th>
     <th>format</th>
     <th>example</th>
@@ -98,11 +98,11 @@ A __Customer__ is an individual person who purchases from a [merchant's][merchan
 
 __Products__ are the offerings of a [merchant][merchant] to their [customers][customer]. Complex products may require customers to make some choices about their contents, in which case they will have one or more [slots][slot].
 
-#### Properties
+#### Attributes
 
 <table>
   <tr>
-    <th>property</th>
+    <th>attribute</th>
     <th>description</th>
     <th>format</th>
     <th>example</th>
