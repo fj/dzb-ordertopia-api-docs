@@ -211,7 +211,7 @@ A __Customer__ is an individual person who purchases from a [merchant's][merchan
 
 ### <a name="store"></a>Products
 
-![customers](http://yuml.me/3298b9e5)
+![products](http://yuml.me/7dac0890)
 
 __Products__ are the offerings of a [merchant][merchant] to their [customers][customer]. Complex products may require customers to make some choices about their contents, in which case they will have one or more [slots][slot].
 
@@ -258,7 +258,9 @@ __Products__ are the offerings of a [merchant][merchant] to their [customers][cu
 
 ### <a name="slot"></a>Slots
 
-__Slots__ represent decisions that can be made about a product, like what kind of toppings to get on a sundae.
+__Slots__ represent decisions that can be made about a [product][product], like what kind of toppings to get on a sundae. A slot is filled with other products (which themselves can also have slots!). Which products may go in a slot depend on the [categories][category] specified by that slot. The number of products matching that specification that may go into a slot is determined by the slot's minimum and maximum size.
+
+
 
 ### <a name="store"></a>Stores
 
@@ -291,6 +293,7 @@ __Errors__ are simply vehicles for delivering information about errors. No other
 
 ## Filters
 
+[category]: #category
 [customer]: #customer
 [merchant]: #merchant
 [product]: #product
