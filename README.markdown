@@ -272,7 +272,48 @@ __Merchants__ are businesses which operate [stores][store]. They earn income by 
     <td>description</td>
     <td>Short textual description of merchant and its offerings.</td>
     <td>string</td>
-    <td>Tasty Taters offers delicious starchy tubers of all kinds!</td>
+    <td>Tasty Taters offers scrumptiously starchy tubers of all kinds!</td>
+  </tr>
+</table>
+
+### <a name="store"></a>Categories
+
+![categories](http://yuml.me/1412243a)
+
+__Categories__ are arbitrary, [merchant][merchant]-defined groupings of [products][product]. Typically, merchants categorize products according to similarity in function or type. Categories may have a parent category.
+
+#### Fields
+
+<table>
+  <tr>
+    <th>field</th>
+    <th>description</th>
+    <th>format</th>
+    <th>example</th>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>Category's unique identifier.</td>
+    <td>identifier</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>merchant_id</td>
+    <td>Merchant that this category belongs to.</td>
+    <td>identifier</td>
+    <td>60</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>Name of this category.</td>
+    <td>string</td>
+    <td>"Cold Beverages"</td>
+  </tr>
+  <tr>
+    <td>parent</td>
+    <td>The parent id of this category.</td>
+    <td>identifier</td>
+    <td>29</td>
   </tr>
 </table>
 
