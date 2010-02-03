@@ -42,6 +42,16 @@ Part of the headers you receive back in any tastyTopia response will be a HTTP s
     <td>You have a syntax error or errors, or something else is wrong about what you asked me to do.</td>
   </tr>
   <tr>
+    <td>401</td>
+    <td>Unauthorized</td>
+    <td><em>(Not used yet.)</em> You didn't supply appropriate credentials.</td>
+  </tr>
+  <tr>
+    <td>403</td>
+    <td>Forbidden</td>
+    <td>You are not authorized to make that kind of request.</td>
+  </tr>
+  <tr>
     <td>404</td>
     <td>Not Found</td>
     <td>The resource you described doesn't match anything I know about.</td>
