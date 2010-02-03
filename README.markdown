@@ -264,6 +264,31 @@ __Slots__ represent decisions that can be made about a product, like what kind o
 
 __Stores__ are a [merchant's][merchant] physical or online presences, through which they sell [products][product]. Presently, each merchant has only one store.
 
+## Special Entities
+
+These entities aren't true domain entities in orderTopia.
+
+### <a name="error"></a>Errors
+
+__Errors__ are simply vehicles for delivering information about errors. No other entity has any relationship with errors.
+
+#### Attributes
+
+<table>
+  <tr>
+    <th>attribute</th>
+    <th>description</th>
+    <th>format</th>
+    <th>example</th>
+  </tr>
+  <tr>
+    <td>msg</td>
+    <td>Message payload for this error.</td>
+    <td>string</td>
+    <td>"filter 'mechant_id' is not a valid filter; did you mean 'merchant_id'?</td>
+  </tr>
+</table>
+
 ## Filters
 
 [customer]: #customer
