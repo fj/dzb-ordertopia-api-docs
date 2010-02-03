@@ -406,7 +406,46 @@ __Errors__ are simply vehicles for delivering information about errors.
   </tr>
 </table>
 
-## Filters
+## <a name="filters"></a>Filters
+
+The following filters with these values are supported:
+
+<table>
+  <tr>
+    <th>filter</th>
+    <th>description</th>
+    <th>format</th>
+    <th>filtered count?</th>
+  </tr>
+  <tr>
+    <td><code>limit = n</code></td>
+    <td>Return no more than <code>n</code> items.</td>
+    <td>number</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td><code>offset = n</code></td>
+    <td>Return items beginning at the <code>n+1</code>th item.</td>
+    <td>number</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td><code>category_id = n</code></td>
+    <td>Return anything tagged with this category.</td>
+    <td>identifier</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td><code>merchant_id = n</code></td>
+    <td>Return anything tagged with this merchant.</td>
+    <td>identifier</td>
+    <td>yes</td>
+  </tr>
+</table>
+
+When you apply some filters, the `count` field in your response may be different from the number of items in the `results` collection. This is done so that you know how many additional results are available that matched your base request, which is helpful when paging through long requests. Filters with this property are identified above with a "no" entry in the "filtered count?" column, and are called __non-reducing filters__.
+
+In such cases, the `count` field will be equal to the number of results that would have been returned had you not applied any __non-reducing filters__.
 
 [category]: #category
 [customer]: #customer
