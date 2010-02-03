@@ -64,9 +64,15 @@ Specifically, a request consists of:
   </tr>
   <tr>
     <td>filter</td>
-    <td>Format to respond in. Must be one of the <a href="#supported-formats">supported formats</a>.</td>
+    <td>Filter to apply to results. Must be one of the <a href="#filters">supported filters</a>.</td>
     <td>string</td>
-    <td>500</td>
+    <td>"limit"</td>
+  </tr>
+   <tr>
+    <td>value</td>
+    <td>Value to pass to this filter.</td>
+    <td><em>(varies; see <a href="#filters">filters</a>)</em></td>
+    <td>100</td>
   </tr>
 </table>
 
@@ -76,7 +82,7 @@ Here are some examples of different requests:
 
 * `http://ordertopia.com/foo/5.json`: __Invalid__; requests must start with the AURI.
 * `http://api.ordertopia.com:8080/foo/5.json`: __Invalid__; `foo` is not an orderTopia resource.
-* `http://api.ordertopia.com:8080/merchants/json.5`: __Non-conforming__; `format` comes before `id`.
+* `http://api.ordertopia.com:8080/merchants/json.5`: __Non-conforming__; `id` should come before `format`.
 * `http://api.ordertopia.com:8080/merchants/5.json`: __Correct__. Retrieves `merchant` resource with `id` 5 in the `json` format.
 * `http://api.ordertopia.com:8080/merchants/list.json?limit=10`: __Correct__. Lists the first 10 `merchant` resources.
 
@@ -84,13 +90,13 @@ Here are some examples of different requests:
 
 The following actions are supported:
 
-* "list": List all matching resources.
+* `list`: List all matching resources.
 
 #### <a name="supported-formats"></a>Supported formats
 
 The following formats are supported:
 
-* "json": Standards-compliant [JavaScript Object Notation](http://json.org).
+* `json`: Standards-compliant [JavaScript Object Notation](http://json.org).
 
 ### HTTP status codes
 
