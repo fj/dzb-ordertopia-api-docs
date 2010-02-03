@@ -67,6 +67,12 @@ A __Customer__ is an individual person who purchases from a [merchant's][merchan
     <th>example</th>
   </tr>
   <tr>
+    <td>id</td>
+    <td>The customer's unique identifier.</td>
+    <td>identifier</td>
+    <td>40</td>
+  </tr>
+  <tr>
     <td>first_name</td>
     <td>Customer's first name.</td>
     <td>string</td>
@@ -77,6 +83,12 @@ A __Customer__ is an individual person who purchases from a [merchant's][merchan
     <td>Customer's last name.</td>
     <td>string</td>
     <td>Waithersford-Humphreys</td>
+  </tr>
+  <tr>
+    <td>street_address</td>
+    <td>Customer's mailing address.</td>
+    <td>string representing a mailing address</td>
+    <td>1 OrderTopia Drive, Charlottesville, VA 22901</td>
   </tr>
   <tr>
     <td>phone_number</td>
