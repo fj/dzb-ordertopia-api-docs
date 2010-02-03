@@ -1,4 +1,4 @@
-# orderTopia API (version 0.1)
+# tastyTopia API for orderTopia (version 0.1)
 
 ## Introduction
 
