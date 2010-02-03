@@ -105,19 +105,18 @@ These fields have the following meaning.
   </tr>
 </table>
 
-#### Successful responses
+#### <a name="success-responses"></a>Successful responses
 
-If you receive an HTTP 200 header, your response was successful and tastyTopia was able to give you what you asked for. Your response will contain a resource array populated with the results.
+If you receive a HTTP 200 header, your request was successful and tastyTopia was able to give you what you asked for. Your response will contain a resource array populated with the results.
 
 #### Failed responses
 
-If you receive any header other than HTTP 200, your response was not necessarily successful:
+If you receive any header other than HTTP 200, your request was not necessarily successful:
 
-* If your [response object][response] has a resource of `error`, then your response failed.
-* If your
-* Otherwise, it was successful.
+* If your [response object][response] has a resource of `error`, then your request failed.
+* Otherwise, it was successful (see [Successful Responses](#success-responses) above).
 
-and the and tastyTopia was able to give you what you asked for. Your response will contain a resource array populated with the results.
+If your request failed, the response will contain one or more [errors][error] which you may consult for additional information.
 
 ## <a name="entities"></a>Entities
 
@@ -287,7 +286,7 @@ __Errors__ are simply vehicles for delivering information about errors. No other
     <td>msg</td>
     <td>Message payload for this error.</td>
     <td>string</td>
-    <td>"filter 'mechant_id' is not a valid filter; did you mean 'merchant_id'?</td>
+    <td>"filter 'mechant_id' is not a valid filter; did you mean 'merchant_id'?"</td>
   </tr>
 </table>
 
@@ -302,3 +301,5 @@ __Errors__ are simply vehicles for delivering information about errors. No other
 [user]: #user
 
 [response]: #response
+
+[error]: #error
