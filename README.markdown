@@ -73,6 +73,8 @@ Part of the headers you receive back in any tastyTopia response will be a HTTP s
   </tr>
 </table>
 
+A code of 200 indicates success. Anything else means that there was a problem with the request.
+
 ### <a name="#response"></a>Responses
 
 When you receive a response, the body will contain a top-level __response object__, in JSON form. It will have the following general structure:
