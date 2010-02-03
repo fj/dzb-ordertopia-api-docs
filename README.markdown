@@ -257,6 +257,12 @@ __Merchants__ are businesses which operate [stores][store]. They earn income by 
     <th>example</th>
   </tr>
   <tr>
+    <td>id</td>
+    <td>Merchants's unique identifier.</td>
+    <td>identifier</td>
+    <td>10</td>
+  </tr>
+  <tr>
     <td>title</td>
     <td>Merchant's business name.</td>
     <td>string</td>
